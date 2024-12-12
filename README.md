@@ -22,7 +22,7 @@ termux-setup-storage
 apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
 ```
 ```bash
-git clone https://github.com/Aqua200/Edeb.git && cd Edeb
+git clone https://github.com/Aqua200/Apeachy.git && cd Apeachy
 ```
 ```bash
 yarn install && npm update && npm i
