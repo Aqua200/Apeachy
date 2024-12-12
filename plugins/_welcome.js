@@ -40,25 +40,25 @@ export async function before(m, {conn, participants, groupMetadata}) {
   if (chat.bienvenida && m.messageStubType == 28) {
     if (chat.sBye) {
       let user = `@${m.messageStubParameters[0].split`@`[0]}`
-      let kick = chat.sBye.replace('@user', () => user);
+      let bye = chat.sBye.replace('@user', () => user);
       
-      await conn.reply(m.chat, Kick, fkontak);
+      await conn.reply(m.chat, bye, fkontak);
     } else {
-      let kick = `${top}_👋 @${m.messageStubParameters[0].split`@`[0]} Ha abandonado el grupo_${bottom}`;
+      let bye = `${top}_👋 @${m.messageStubParameters[0].split`@`[0]} Ha abandonado el grupo_${bottom}`;
       
-      await conn.reply(m.chat, kick, fkontak);
+      await conn.reply(m.chat, bye, fkontak);
     }
   }
   
   if (chat.bienvenida && m.messageStubType == 32) {
     if (chat.sBye) {
       let user = `@${m.messageStubParameters[0].split`@`[0]}`
-      let bye = chat.sBye.replace('@user', () => user);
+      let kick = chat.sBye.replace('@user', () => user);
       
-      await conn.reply(m.chat, bye, fkontak);
+      await conn.reply(m.chat, kick, fkontak);
     } else {
       let kick = `${top}_☠️ @${m.messageStubParameters[0].split`@`[0]} Fue expulsad@ del grupo_${bottom}`;
       
-      await conn.reply(m.chat, bye, fkontak);
+      await conn.reply(m.chat, kick, fkontak);
     }
 }}
