@@ -1,96 +1,28 @@
-import axios from 'axios';
+import Starlights from '@StarlightsTeam/Scraper'
 
-const {
-  generateWAMessageContent,
-  generateWAMessageFromContent,
-  proto
-} = (await import("@whiskeysockets/baileys"))["default"];
-
-let handler = async (message, { conn, text }) => {
-  if (!text) {
-    return message.reply("_*[ ⚠️ ] Ingresa lo que quieres buscar en Spotify*_");
-  }
-
-  async function createImageMessage(url) {
-    const { imageMessage } = await generateWAMessageContent({
-      'image': { 'url': url }
-    }, { 'upload': conn.waUploadToServer });
-    return imageMessage;
-  }
-/*
-  function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-  }
-*/
+let handler = async (m, { conn, command, args, text, usedPrefix }) => {
+  if (!text) return conn.reply(m.chat, '🚩 Ingresa el título de un video o canción de YouTube.\n\n`Ejemplo:`\n' + `> *${usedPrefix + command}* Gemini Aaliyah - If Only`, m, rcanal)
+  await m.react('🕓')
   try {
-    let imageMessages = [];
-    let { data } = await axios.get(`https://deliriussapi-oficial.vercel.app/search/spotify?q=${encodeURIComponent(text)}&limit=15`);
+    let res = await Starlights.spotifySearch(text)
+    let img = await (await fetch(`${res[0].thumbnail}`)).buffer()
+    let txt = '`乂  S P O T I F Y  -  S E A R C H`'
+    for (let i = 0; i < res.length; i++) {
+      txt += `\n\n`
+      txt += `  *» Nro* : ${i + 1}\n`
+      txt += `  *» Titulo* : ${res[i].title}\n`
+      txt += `  *» Artista* : ${res[i].artist}\n`
+      txt += `  *» Url* : ${res[i].url}`
+    }
     
+await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
+await m.react('✅')
+} catch {
+await m.react('✖️')
+}}
+handler.help = ['spotifysearch *<búsqueda>*']
+handler.tags = ['search']
+handler.command = ['spotifysearch']
+handler.register = true
 
-    if (!data.data) {
-      return message.reply("⚠️ No se encontraron resultados para la búsqueda");
-    }
-
-    //shuffleArray(data.data);
-    let selectedResults = data.data.splice(0, 15);
-
-    for (let result of selectedResults) {
-      
-
-      imageMessages.push({
-        'body': proto.Message.InteractiveMessage.Body.fromObject({
-          'text': `╭─${em}──✦\n│⥤📝 *Titulo:* ${result.title}\n│⥤👤 *Artista:* ${result.artist}\n│⥤⏱️ *Duración:* ${result.duration}\n│⥤🌐 *Publicado:* ${result.publish}\n│⥤⭐ *Popularidad:* ${result.popularity}\n│⥤🔗 *Link:* ${result.url}\n╰─${em}──✦`
-        }),
-        'footer': proto.Message.InteractiveMessage.Footer.fromObject({
-          'text': ""
-        }),
-        'header': proto.Message.InteractiveMessage.Header.fromObject({
-          'title': "", 
-          'hasMediaAttachment': true,
-          'imageMessage': await createImageMessage(result.image)
-        }),
-        'nativeFlowMessage': proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
-          
-        })
-      });
-    }
-
-    const finalMessage = generateWAMessageFromContent(message.chat, {
-      'viewOnceMessage': {
-        'message': {
-          'messageContextInfo': {
-            'deviceListMetadata': {},
-            'deviceListMetadataVersion': 2
-          },
-          'interactiveMessage': proto.Message.InteractiveMessage.fromObject({
-            'body': proto.Message.InteractiveMessage.Body.create({
-              'text': "*Resultados de:* " + text
-            }),
-            'footer': proto.Message.InteractiveMessage.Footer.create({
-              'text': ""
-            }),
-            'header': proto.Message.InteractiveMessage.Header.create({
-              'hasMediaAttachment': false
-            }),
-            'carouselMessage': proto.Message.InteractiveMessage.CarouselMessage.fromObject({
-              'cards': [...imageMessages]
-            })
-          })
-        }
-      }
-    }, { 'quoted': message });
-
-    await conn.relayMessage(message.chat, finalMessage.message, { 'messageId': finalMessage.key.id });
-
-  } catch (error) {
-    console.error(error);
-    message.reply("_*[ ❌ ] Hubo un error al buscar. Inténtalo de nuevo más tarde.*_");
-  }
-};
-
-handler.command = ['spotifysearch', 'spotifys'];
-
-export default handler;
+export default handler
