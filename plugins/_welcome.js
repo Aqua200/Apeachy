@@ -42,11 +42,11 @@ export async function before(m, {conn, participants, groupMetadata}) {
       let user = `@${m.messageStubParameters[0].split`@`[0]}`
       let bye = chat.sBye.replace('@user', () => user);
       
-      await conn.reply(m.chat, bye, fkontak);
+      await conn.reply(m.chat, Kick, fkontak);
     } else {
       let bye = `${top}_👋 @${m.messageStubParameters[0].split`@`[0]} Ha abandonado el grupo_${bottom}`;
       
-      await conn.reply(m.chat, bye, fkontak);
+      await conn.reply(m.chat, kick, fkontak);
     }
   }
   
@@ -55,7 +55,7 @@ export async function before(m, {conn, participants, groupMetadata}) {
       let user = `@${m.messageStubParameters[0].split`@`[0]}`
       let kick = chat.sBye.replace('@user', () => user);
       
-      await conn.reply(m.chat, kick, fkontak);
+      await conn.reply(m.chat, bye, fkontak);
     } else {
       let kick = `${top}_☠️ @${m.messageStubParameters[0].split`@`[0]} Fue expulsad@ del grupo_${bottom}`;
       
