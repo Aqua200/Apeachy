@@ -10,8 +10,8 @@ import moment from 'moment-timezone'
 
 
 global.owner = [
-  ['50375961083', 'Rudy', true],
-  ['584123989549']
+  ['573163952124', 'CREADOR', true],
+  ['']
 ]
 
 
@@ -21,13 +21,13 @@ global.prems = []
    
 
 
-global.packname = `Creado por`
-global.author = '✿ 𝐀𝐢𝐫𝐢 ✿'
-global.botname = '✿ 𝐀𝐢𝐫𝐢 ✿'
+global.packname = `Creado por Aqua200`
+global.author = 'Apeachy'
+global.botname = 'Apeachy'
 global.botdesc = `𝙴𝚕 𝚖𝚎𝚓𝚘𝚛 𝚋𝚘𝚝 𝚍𝚎 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 ✅`
 global.baileys = '@whiskeysockets/baileys'
 
-global.em = '🌱'
+global.em = '❤️'
 
 global.cheerio = cheerio
 global.fs = fs
