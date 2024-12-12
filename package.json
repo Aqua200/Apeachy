@@ -1,5 +1,5 @@
 {
-  "name": "Prueba",
+  "name": "Apeachy",
   "version": "1.0.0",
   "description": "Super WhatsApp Bot Multi Device",
   "main": "index.js",
@@ -18,16 +18,16 @@
     "eslint": "eslint .",
     "eslintfix": "eslint --fix ."
   },
-  "homepage": "https://github.com/DexterZ9/Prueba",
+  "homepage": "https://github.com/Aqua200/Apeachy",
   "author": {
-    "name": "DexterZ9"
+    "name": "Aqua200"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DexterZ9/Prueba.git"
+    "url": "git+https://github.com/Aqua200/Apeachy.git"
   },
   "bugs": {
-    "url": "https://github.com/DexterZ9/Prueba/issues"
+    "url": "https://github.com/Aqua200/Apeachy/issues"
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
