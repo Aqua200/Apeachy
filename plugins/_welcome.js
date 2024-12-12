@@ -59,6 +59,6 @@ export async function before(m, {conn, participants, groupMetadata}) {
     } else {
       let kick = `${top}_☠️ @${m.messageStubParameters[0].split`@`[0]} Fue expulsad@ del grupo_${bottom}`;
       
-      await conn.reply(m.chat, kick, fkontak);
+      await conn.reply(m.chat, bye, fkontak);
     }
 }}
