@@ -14,7 +14,7 @@ let handler = async (m, { usedPrefix, command }) => {
         title: global.packname, 
         body: 'Prueba', 
         previewType: 0, 
-        thumbnail: icons, 
+        thumbnail:icon,
       }
     }
   });
