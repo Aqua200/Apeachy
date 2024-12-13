@@ -44,7 +44,7 @@ export async function before(m, {conn, participants, groupMetadata}) {
       
       await conn.reply(m.chat, bye, fkontak);
     } else {
-      let bye = `${top}_🦋 @${m.messageStubParameters[0].split`@`[0]} 𝚑𝚊 𝚜𝚒𝚍𝚘 𝚎𝚡𝚙𝚞𝚕𝚜𝚊𝚍@ 𝚍𝚎𝚕 𝚐𝚛𝚞𝚙𝚘_${bottom}`;
+      let bye = `${top}_🤦🏻‍♀️ @${m.messageStubParameters[0].split`@`[0]} 𝚑𝚊 𝚜𝚒𝚍𝚘 𝚎𝚡𝚙𝚞𝚕𝚜𝚊𝚍@ 𝚍𝚎𝚕 𝚐𝚛𝚞𝚙𝚘_${bottom}`;
       
       await conn.reply(m.chat, bye, fkontak);
     }
@@ -57,7 +57,7 @@ export async function before(m, {conn, participants, groupMetadata}) {
       
       await conn.reply(m.chat, kick, fkontak);
     } else {
-      let kick = `${top}_❤️ @${m.messageStubParameters[0].split`@`[0]} 𝙷𝚊 𝚊𝚋𝚊𝚗𝚍𝚘𝚗𝚊𝚍𝚘 𝚎𝚕 𝚐𝚛𝚞𝚙𝚘_${bottom}`;
+      let kick = `${top}_🌹 @${m.messageStubParameters[0].split`@`[0]} 𝙷𝚊 𝚊𝚋𝚊𝚗𝚍𝚘𝚗𝚊𝚍𝚘 𝚎𝚕 𝚐𝚛𝚞𝚙𝚘_${bottom}`;
       
       await conn.reply(m.chat, kick, fkontak);
     }
