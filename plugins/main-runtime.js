@@ -13,8 +13,6 @@ let handler = async (m, { usedPrefix, command }) => {
         description: false, 
         title: global.packname, 
         body: 'Prueba', 
-        previewType: 0, 
-        thumbnail:icon,
       }
     }
   });
