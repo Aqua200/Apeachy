@@ -6,6 +6,15 @@ let handler = async (m, { usedPrefix, command }) => {
 
 ✰ 𝗧𝗶𝗲𝗺𝗽𝗼 𝗔𝗰𝘁𝗶𝘃𝗼: ${rTime(uptime)}`;
   conn.reply(m.chat, runtime, m, { 
+    contextInfo: { 
+      externalAdReply: { 
+        mediaUrl: false, 
+        mediaType: 1, 
+        description: false, 
+        title: global.packname, 
+        body: 'Prueba', 
+        previewType: 0, 
+        thumbnail: icons, 
       }
     }
   });
