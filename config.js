@@ -21,7 +21,7 @@ global.prems = []
    
 
 
-global.packname = `Creado por Aqua200`
+global.packname = `Creado por Neykoor💜`
 global.author = 'Apeachy'
 global.botname = 'Apeachy'
 global.botdesc = `𝙴𝚕 𝚖𝚎𝚓𝚘𝚛 𝚋𝚘𝚝 𝚍𝚎 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 ✅`
