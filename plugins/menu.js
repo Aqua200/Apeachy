@@ -6,7 +6,7 @@ let handler = async (m, { conn }) => {
     let menu = `
 ༺═──────────────═༻
 
-Hola *${name}* en que puedo ayudarte hoy 😀
+Hola *${name}* en que puedo ayudarte hoy ❤️
 
 【 𝘔𝘌𝘕𝘜 𝘋𝘌 𝘊𝘖𝘔𝘈𝘕𝘋𝘖𝘚 】
 ${readMore}
