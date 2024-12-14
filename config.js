@@ -11,7 +11,7 @@ import moment from 'moment-timezone'
 
 global.owner = [
   ['573163952124', 'CREADOR', true],
-  ['']
+  ['51917697525',  'Modelador', true],
 ]
 
 
