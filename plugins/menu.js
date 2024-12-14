@@ -8,13 +8,6 @@ let handler = async (m, { conn }) => {
 
 Hola *${name}* en que puedo ayudarte hoy 😀
 
-╭──⬣「 *Info User* 」⬣
-│  ≡◦ *🍭 Nombre ∙* %name
-│  ≡◦ *🍬 Dulces ∙* %limit
-│  ≡◦ *💫 XP ∙* %totalexp
-│  ≡◦ *🐢 Nivel ∙* %level
-╰──⬣
-
 【 𝘔𝘌𝘕𝘜 𝘋𝘌 𝘊𝘖𝘔𝘈𝘕𝘋𝘖𝘚 】
 ${readMore}
 
