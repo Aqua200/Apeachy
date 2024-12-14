@@ -75,14 +75,6 @@ ${readMore}
 ├ ▢ *.disable*
 ├ ⓘ _Desactivar función_
 ╰─❮ ${em} ❯
-
-\t\t\t*L I S T A  -  M E N Ú S*
-`.trimStart(),
-header: '╭──⬣「 *%category* 」⬣',
-body: '│  ≡◦ *%cmd*\n',
-footer: '╰──⬣\n',
-after: '',
-}
     `.trim()
         await conn.sendAiri(m.chat, botname, botdesc, menu, true, thumb, null, m);
 }
