@@ -4,7 +4,7 @@ let handler = async (m, { conn }) => {
     let thumb = getRandomThumb();
     let name = await conn.getName(m.sender)
     let menu = `
-༺═──────────────═༻
+༺═────────────═༻
 
 Hola *${name}* en que puedo ayudarte hoy ❤️
 
