@@ -7,7 +7,7 @@ let handler = async (m, { conn }) => {
 ༺═────────────═༻
 
 Hola *${name}* en que puedo ayudarte hoy ❤️
-
+ tiempo activa ${muptime}
 【 𝘔𝘌𝘕𝘜 𝘋𝘌 𝘊𝘖𝘔𝘈𝘕𝘋𝘖𝘚 】
 ${readMore}
 
